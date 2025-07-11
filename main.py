@@ -31,7 +31,7 @@ def about():
 def data():
     user_data = {"name":"Vikash Kumar",
                  "age":24}
-    return jsonify(user_data)
+    return jsonify(user_data) #Jsonify is recommended to use
 
 #Trigger the flask app
 if __name__=='__main__': #Default python that runs initially internally
