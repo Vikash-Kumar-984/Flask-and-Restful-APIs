@@ -3,6 +3,7 @@ import requests
 
 API_KEY="ab6d708b5b4142cba5f61839b74b9e3b"
 url="https://newsapi.org/v2/everything?q=tesla&from=2025-06-12&sortBy=publishedAt&apiKey=ab6d708b5b4142cba5f61839b74b9e3b"
+# https://newsapi.org/
 
 app=Flask(__name__)
 
