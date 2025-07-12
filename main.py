@@ -1,5 +1,6 @@
 #Import Flask
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template 
+#render_template is used to link html page
 
 
 #Create Flask instance
@@ -7,16 +8,16 @@ app=Flask(__name__)
 
 
 #Define function and route
-@app.route('/') #Decorator to expose the function to flask #route is flask function which contents the url 
+# @app.route('/') #Decorator to expose the function to flask #route is flask function which contents the url 
 # def home():
 #     return "Hello World! Vikash"
 
 #'/' , '/about' , '/data' : 3 Webpages Creation
 
 # Exposing the function to flask
-@app.route('/')
-def home():
-    return "Welcome to the website! By Vikash Kumar"
+# @app.route('/')
+# def home():
+#     return "Welcome to the website! By Vikash Kumar"
 
 @app.route('/about')
 def about():
@@ -32,6 +33,10 @@ def data():
     user_data = {"name":"Vikash Kumar",
                  "age":24}
     return jsonify(user_data) #Jsonify is recommended to use
+
+@app.route('/')
+def home_page():
+    return render_template('index.html') #to display from index.html file
 
 #Trigger the flask app
 if __name__=='__main__': #Default python that runs initially internally
