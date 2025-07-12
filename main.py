@@ -34,10 +34,15 @@ def data():
                  "age":24}
     return jsonify(user_data) #Jsonify is recommended to use
 
-@app.route('/')
-def home_page():
-    name="Vikash"
-    return render_template('index.html',name=name) #to display from index.html file
+# @app.route('/')
+# def home_page():
+#     name="Vikash"
+#     return render_template('index.html',name=name) #to display from index.html file and take input from frontend to backend
+
+
+@app.route('/',methods=['GET'])
+def home():
+    return "Welcome! Champ!!!"
 
 #Trigger the flask app
 if __name__=='__main__': #Default python that runs initially internally
