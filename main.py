@@ -40,9 +40,18 @@ def data():
 #     return render_template('index.html',name=name) #to display from index.html file and take input from frontend to backend
 
 
+# @app.route('/',methods=['GET'])
+# def home():
+#     return "Welcome! Champ!!!"
+
+
 @app.route('/',methods=['GET'])
-def home():
-    return "Welcome! Champ!!!"
+def form():
+    return render_template("form.html")
+
+@app.route('/form',methods=['POST']) #If the method is GET then the sensitive infomation of name and password will be appeared in the url
+def welcome():
+    return "The form is received"
 
 #Trigger the flask app
 if __name__=='__main__': #Default python that runs initially internally
