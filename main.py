@@ -36,7 +36,8 @@ def data():
 
 @app.route('/')
 def home_page():
-    return render_template('index.html') #to display from index.html file
+    name="Vikash"
+    return render_template('index.html',name=name) #to display from index.html file
 
 #Trigger the flask app
 if __name__=='__main__': #Default python that runs initially internally
